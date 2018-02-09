@@ -2,7 +2,7 @@
 set -e
 
 readonly EXPECTED=$(cat README.md | grep Version | cut -d'=' -f2)
-readonly ACTUAL=$(docker run --rm -it cyberdojofoundation/kotlin sh -c 'kotlinc --version')
+readonly ACTUAL=$(docker run --rm -it cyberdojofoundation/kotlin sh -c 'kotlinc -version')
 
 if echo ${ACTUAL} | grep -q ${EXPECTED}; then
   echo "VERSION CONFIRMED as ${EXPECTED}"
