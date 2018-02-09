@@ -1,3 +1,5 @@
-# kotlin 1.1.3
+# Kotlin
 
-![Build Status](https://travis-ci.org/cyber-dojo-languages/kotlin-1.1.3.svg?branch=master)
+![Build Status](https://travis-ci.org/cyber-dojo-languages/kotlin.svg?branch=master)
+
+Version=1.1.3

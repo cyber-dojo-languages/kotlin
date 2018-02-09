@@ -1,4 +1,4 @@
-FROM cyberdojofoundation/java:1.8
+FROM  openjdk:8-jdk-alpine
 LABEL maintainer=jon@jaggersoft.com
 
 ENV KOTLIN_VERSION=1.1.3-2 \
