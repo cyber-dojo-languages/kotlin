@@ -1,7 +1,7 @@
 FROM  openjdk:8-jdk-alpine
 LABEL maintainer=jon@jaggersoft.com
 
-ENV KOTLIN_VERSION=1.1.3-2 \
+ENV KOTLIN_VERSION=1.3.61 \
     KOTLIN_HOME=/usr/share/kotlin
 
 RUN mkdir "${KOTLIN_HOME}"
