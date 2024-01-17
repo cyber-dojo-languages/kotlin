@@ -1,7 +1,7 @@
 #!/bin/bash -Eeu
 
 readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
-readonly EXPECTED=1.3.61
+readonly EXPECTED=1.9.22
 readonly ACTUAL=$(docker run --rm -it cyberdojofoundation/kotlin sh -c 'kotlinc -version')
 
 if echo "${ACTUAL}" | grep -q "${EXPECTED}"; then
