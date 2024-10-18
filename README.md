@@ -1,5 +1,5 @@
 [![Github Action (main)](https://github.com/cyber-dojo-languages/kotlin/actions/workflows/main.yml/badge.svg)](https://github.com/cyber-dojo-languages/kotlin/actions)
 
-## image_name="ghcr.io/cyber-dojo-languages//kotlin"
+## image_name="ghcr.io/cyber-dojo-languages/kotlin"
 
 ![cyber-dojo.org home page](https://github.com/cyber-dojo/cyber-dojo/blob/master/shared/home_page_snapshot.png)
