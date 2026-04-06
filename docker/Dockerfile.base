@@ -1,7 +1,7 @@
-FROM amazoncorretto:8-alpine3.18-jdk
+FROM amazoncorretto:8-alpine3.21-jdk
 LABEL maintainer=jon@jaggersoft.com
 
-ENV KOTLIN_VERSION=2.0.21 \
+ENV KOTLIN_VERSION=2.3.20 \
     KOTLIN_HOME=/usr/share/kotlin
 
 RUN mkdir "${KOTLIN_HOME}"
