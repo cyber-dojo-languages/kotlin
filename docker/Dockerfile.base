@@ -1,18 +1,16 @@
-FROM amazoncorretto:25-alpine3.24-jdk
+# The floating tag of the same alpine-musl JDK the java image uses, so a
+# rebuild picks up the newest stable JDK. It is published as an index holding
+# real amd64 and arm64 layers, so each runner builds from binaries its own
+# kernel can exec.
+FROM bellsoft/liberica-openjdk-alpine-musl:latest
 LABEL maintainer=jon@jaggersoft.com
 
-ENV KOTLIN_VERSION=2.4.10 \
-    KOTLIN_HOME=/usr/share/kotlin
+ENV KOTLIN_HOME=/usr/share/kotlin
 
 RUN mkdir "${KOTLIN_HOME}"
 WORKDIR ${KOTLIN_HOME}
 
-RUN apk add --update bash \
-  && apk add --virtual=build-dependencies wget ca-certificates \
-  && wget "https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_VERSION}/kotlin-compiler-${KOTLIN_VERSION}.zip" \
-  && unzip "kotlin-compiler-${KOTLIN_VERSION}.zip" \
-  && rm "kotlin-compiler-${KOTLIN_VERSION}.zip" \
-  && apk del build-dependencies \
-  && rm -rf /tmp/* /var/cache/apk/*
+COPY install.sh .
+RUN ./install.sh && rm ./install.sh
 
 ENV PATH=${PATH}:${KOTLIN_HOME}/kotlinc/bin
