@@ -32,9 +32,8 @@ wget "https://github.com/JetBrains/kotlin/releases/download/${KOTLIN_TAG}/${ZIP}
 unzip "${ZIP}"
 rm "${ZIP}"
 
-# Read by check_version.sh and by the images built on this one, so that all of
-# them state the version this image holds rather than repeating a number
-# written down somewhere else.
+# Read by the images built on this one, so that all of them state the version
+# this image holds rather than repeating a number written down somewhere else.
 cat > /versions.json <<EOF
 {
   "language": {
