@@ -35,7 +35,15 @@ rm "${ZIP}"
 # Read by check_version.sh and by the images built on this one, so that all of
 # them state the version this image holds rather than repeating a number
 # written down somewhere else.
-echo "{\"kotlin\":\"${KOTLIN_VERSION}\"}" > /versions.json
+cat > /versions.json <<EOF
+{
+  "language": {
+    "name": "Kotlin",
+    "version": "${KOTLIN_VERSION}"
+  },
+  "test_frameworks": []
+}
+EOF
 
 apk del build-dependencies
 rm -rf /tmp/* /var/cache/apk/*
